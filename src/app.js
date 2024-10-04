@@ -4,14 +4,15 @@ import rateLimit from 'express-rate-limit';
 import cors from 'cors';
 
 const app = express();
-const port = 3015;
+const port = 3018;
 
 app.use(helmet());
 
 // Limite les requêtes à 100 toutes les 15 minutes
 const limiter = rateLimit({
   windowMs: 1* 60 * 1000, 
-  max: 4,
+  max: 3,
+  message: 'veuillez réessayer après 1 minutes.',
 });
 
 
